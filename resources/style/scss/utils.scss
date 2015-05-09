@@ -1,0 +1,120 @@
+/*Safe colors*/
+$black: #333;
+$light_grey: #ccc;
+$grey: #999;
+$dark_grey: #666;
+$white: #FFF;
+$light_light_grey: #EEE;
+$red_error: #F00;
+$red_remove: #D21;
+$red_remove_hover: #A82211;
+$green_ok: #6B6;
+
+/*Citius UI*/
+$orange_citius: #f3881f;
+$dark_orange: #C45B30;
+
+$height_navigation_bar: 40px;
+
+@mixin standard_font(){
+    font-family: 'candelabook', Ubuntu, sans-serif;
+    font-size: 14px;
+}
+
+@mixin full_bar($height, $color){
+    height:$height;
+    background-color:$color;
+    display: block;		
+}
+
+@mixin vertical_center_content(){
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+    
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+    
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+
+@mixin borde(){
+    border: 1px solid green;
+}
+
+@mixin button{
+    
+    display:inline-block;
+    vertical-align:middle;
+    width:auto;
+    margin:10px;
+    border-width:0px;
+    border-radius:5px;
+    padding: 8px 15px;
+    //Font color
+    color:$white;
+    background:$orange_citius;
+    
+    font-size:0.90em;
+    
+    &:hover{
+        background:$black;
+        @include link;
+    }   
+}
+
+@mixin textOverflow($width) {
+    -o-text-overflow: ellipsis;   /* Opera */
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    width: $width;
+}
+
+@mixin navigation_button($padding){
+    
+    display:table-cell;
+    vertical-align:middle;  
+    margin:0px;
+    padding:0px $padding;
+    height:$height_navigation_bar;
+    border:0px;
+    text-decoration:none;
+    //padding: 8px 15px;
+    //Font color
+    color:$white;
+    background:$orange_citius;
+    font-size:0.90em;
+    &:hover{
+        background:$black;
+    }   
+}
+
+@mixin list_no_format {
+        ul:not(.dropdown_child){
+        //display:inline-block;
+        float:left;
+        margin:0px;
+        padding:0px;
+        li{
+            margin:0px;
+            list-style:none;
+            display: inline-block;
+        }
+    }
+}
+
+@mixin link{
+    cursor: pointer;
+}

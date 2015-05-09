@@ -1,0 +1,111 @@
+@import "utils";
+@import 'icons';
+
+/*TEMPLATE*/
+    html, body{
+        margin: 0px;
+        height: 100%;
+    /*    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+        @include standard_font;
+        padding:0px;
+    }
+
+
+
+
+/*ERRORS & NOTIFICATIONS*/
+
+    .notification{
+        margin:2%;
+        padding:2%;
+    }
+
+    .info{
+        color:$green_ok;
+    }
+
+    .error{
+        color:$red_error;
+    }
+
+
+/*USEFUL*/
+    .inline{
+        display:inline-block;
+    }
+
+    .nopadding{
+        padding:0px;
+    }
+
+    .nomargin{
+        margin:0px;
+    }
+
+    .center{
+        text-align:center;
+        margin:auto;
+    }
+
+    .left{
+        float:left;
+        display:inline-block;
+    }
+
+    .right{
+        float:right;
+        display:inline-block;
+    }
+
+    .link{
+        @include link;
+        display:inline-block;
+    }
+
+    .underline{
+        text-decoration:underline;
+    }
+
+    .expandFloats{
+        display:block;
+        overflow:hidden;
+    }
+
+    .width30pc{
+        width:30%;
+        min-width:300px;
+        margin-right:0px;
+        margin-left:2%;
+    }
+
+    .width80pc{
+        width:80%;
+        min-width:400px;
+        margin-right:0px;
+        margin-left:2%;
+
+        span.label{
+            width: 170px;
+        }
+
+    }
+
+    .inline{
+        padding: 0px 5px;
+        display:inline-block;
+        width:auto !important;
+    }
+
+    iframe.hidden{
+    display:none;
+}
+
+/*    .hidden{
+        display:none;
+    }*/
+
+
+/*FORMS*/
+    input[type="number"] {
+        width:100px;
+    }

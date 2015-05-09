@@ -1,0 +1,108 @@
+@import "utils";
+
+body {
+  width: 450px;
+  margin: 0;
+}
+
+button {
+  margin: 0 3px 0 3px;
+}
+
+.icon-floppy-disk{
+  color:darkgreen;
+}
+
+.icon-cross{
+  color: darkred;
+}
+
+header {
+
+  @include full_bar(30, $orange_citius);
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid $dark_grey;
+  overflow: hidden;
+  #informationSection, #menu{
+    display:inline-block;
+  }
+  #menu{
+      float: right;
+  }
+}
+
+#configForms{
+    width: 100%;
+    form {
+      padding: 15px 10px 15px 10px;
+      border-bottom: 1px solid $light_grey;
+
+      button{
+        float:right;
+      }
+    }
+}
+
+#main{
+  background: $light_light_grey;
+  padding: 10px 10px 15px 10px;
+  border-bottom: 1px solid $light_grey;
+
+  #messages {
+    margin:0;
+    #refreshBtn{
+      float:right;
+    }
+    #loading{
+      position: relative;
+      left: 145px;
+      width: 30px;
+      height: 30px;
+      border: 6px solid #CC4400;
+      border-radius: 30px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+
+      -webkit-animation: spin 1s infinite linear;
+      -moz-animation: spin 1s infinite linear;
+      animation: spin 1s infinite linear;
+
+      @-ms-keyframes spin {
+        from { -ms-transform: rotate(0deg); } to { -ms-transform: rotate(360deg); }
+      }
+      @-moz-keyframes spin {
+        from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg); }
+      }
+      @-webkit-keyframes spin {
+        from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes spin {
+        from {transform:rotate(0deg);} to {transform:rotate(360deg);}
+      }
+
+    }
+
+    #chatMsg {
+      padding: 0;
+      li{
+        list-style-type: none;
+        margin-bottom: 1em;
+        .tst{font-size: 0.9em; color: $dark_grey;}
+        .usr{font-style: italic; color: $dark_orange;}
+        .txt{display:block; margin-left: 1em;}
+      }
+    }
+  }
+
+
+
+  #formMsg{
+    textarea{
+      width:370px;
+      height: 50px;
+      resize: vertical;
+    }
+    button{float:right;}
+  }
+
+}

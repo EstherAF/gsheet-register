@@ -1,0 +1,8 @@
+@font-face {
+  font-family: iconFont;
+  src: url("fontPath/icomoon.ttf") format("truetype"), url("fontPath/icomoon.woff") format("woff"); }
+/*@mixin icon_font(){
+  font-family: $nameIconFont;
+}*/
+
+/*# sourceMappingURL=icons.css.map */

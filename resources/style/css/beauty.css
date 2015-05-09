@@ -1,0 +1,97 @@
+/*Safe colors*/
+/*Citius UI*/
+body {
+  width: 450px;
+  margin: 0; }
+
+button {
+  margin: 0 3px 0 3px; }
+
+.icon-floppy-disk {
+  color: darkgreen; }
+
+.icon-cross {
+  color: darkred; }
+
+header {
+  height: 30;
+  background-color: #f3881f;
+  display: block;
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #666;
+  overflow: hidden; }
+  header #informationSection, header #menu {
+    display: inline-block; }
+  header #menu {
+    float: right; }
+
+#configForms {
+  width: 100%; }
+  #configForms form {
+    padding: 15px 10px 15px 10px;
+    border-bottom: 1px solid #ccc; }
+    #configForms form button {
+      float: right; }
+
+#main {
+  background: #EEE;
+  padding: 10px 10px 15px 10px;
+  border-bottom: 1px solid #ccc; }
+  #main #messages {
+    margin: 0; }
+    #main #messages #refreshBtn {
+      float: right; }
+    #main #messages #loading {
+      position: relative;
+      left: 145px;
+      width: 30px;
+      height: 30px;
+      border: 6px solid #CC4400;
+      border-radius: 30px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      -webkit-animation: spin 1s infinite linear;
+      -moz-animation: spin 1s infinite linear;
+      animation: spin 1s infinite linear; }
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg); }
+  to {
+    -ms-transform: rotate(360deg); } }
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+    #main #messages #chatMsg {
+      padding: 0; }
+      #main #messages #chatMsg li {
+        list-style-type: none;
+        margin-bottom: 1em; }
+        #main #messages #chatMsg li .tst {
+          font-size: 0.9em;
+          color: #666; }
+        #main #messages #chatMsg li .usr {
+          font-style: italic;
+          color: #C45B30; }
+        #main #messages #chatMsg li .txt {
+          display: block;
+          margin-left: 1em; }
+  #main #formMsg textarea {
+    width: 370px;
+    height: 50px;
+    resize: vertical; }
+  #main #formMsg button {
+    float: right; }
+
+/*# sourceMappingURL=beauty.css.map */

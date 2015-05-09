@@ -1,0 +1,19 @@
+$fontPath: 'file:///D:/Workspaces/Workspace_JavaScript/gChat/resources/font';
+$nameIconFont: 'icomoon';
+
+@font-face{
+    font-family: iconFont;
+    src: url('#{$fontPath}/#{$nameIconFont}.ttf') format('truetype'),
+          url('#{$fontPath}/#{$nameIconFont}.woff') format('woff');
+}
+
+/*@mixin icon_font(){
+  font-family: $nameIconFont;
+}*/
+
+
+//add thread
+.icon-plus-bubble:before {
+  font-family: $nameIconFont;
+  content: "\ea0a\e96b";
+}

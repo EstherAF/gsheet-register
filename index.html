@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="./resources/style/css/general.css">
+		<link rel="stylesheet" type="text/css" href="./resources/style/css/beauty.css">
+		<!--<link rel="stylesheet" type="text/css" href="./resources/style/css/icons.css">-->
+		<link rel="stylesheet" href="http://i.icomoon.io/public/temp/e199bc5561/UntitledProject/style.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+		<script src="./resources/js/externals/briefcase.js" ></script>
+		<script src="./resources/js/gDocIO.js" ></script>
+		<script src="./resources/js/util.js" ></script>
+		<script src="./resources/js/viewController/indexController.js" ></script>
+		<script>
+			var UI;
+			$(function(){
+				UI = indexController.initUI();
+				gDocIO.bindSubmit(UI.form.$, function(){
+						indexController.showReceivedData(); 
+					});
+				/*gDocIO.bindRequest(
+					UI.config.$, UI.config.sala.$, UI.config.intervalo.$, 
+					[UI.form.$, UI.listaMensajes.$],
+					showReceivedData);
+				*/	
+				UI.config.salaForm.$.submit(function(){
+					UI.form.salaForm.sala.value(this.value);
+				});
+			});	
+		</script>
+	</head>
+	<body id="indexContainer">
+		<header>
+			<section id="informationSection">
+				<span id="actualRoom">No room</span>
+				<span id="actualUser">No user</span>
+			</section>
+			<nav id="menu">
+				<button id="showUserFormBtn" type="button" class="iconBtn icon-user-tie">
+				</button><button id="showIntervalFormBtn" type="button" class="iconBtn icon-history">
+				</button><button id="showRoomFormBtn" type="button" class="iconBtn icon-plus-bubble">
+				</button>
+			</nav>
+		</header>
+
+		<!-- HIDDEN AT START -->
+		<section id="configForms" class="hidden">
+			<!-- seleccionar nombre de usuario -->
+			<form id="configUserForm" action="#" method="POST" class="hidden">
+				<label>Usuario
+					<input id="inputUser" type="text" name="userName" placeholder="Nombre de usuario"/></label>
+
+				<button type="submit" class="iconBtn icon-floppy-disk"></button>
+			</form>
+
+			<!-- seleccionar intervalo de refresco -->
+			<form id="configIntervalForm" action="#" method="POST" class="hidden">
+				<label>Frecuencia
+					<input id="interval" type="number" name="interval" placeholder="desactivado" text="0" />ms</label>
+				<button type="reset" class="iconBtn icon-cross"></button>
+				<button type="submit" class="iconBtn icon-floppy-disk"></button>
+			</form>
+
+			<!-- crear sala/hilo -->
+			<form id="configRoomForm" action="#" method="POST" class="hidden">
+				<label>Nuevo hilo:
+					<input id="newRoom" type="text" placeholder="Identificador del nuevo hilo"/></label>
+				<button type="submit" class="iconBtn icon-floppy-disk"></button>
+			</form>
+		</section>
+
+		<div id="main" class="hidden"><section id="messages" class="hidden">
+			<button id="refreshBtn" type="button" class="iconBtn icon-loop2" class="hidden"></button>
+			<!--<p id="loading" class="hidden loading"></p>-->
+			<ul id="chatMsg" class="hidden">
+				<li>
+					<span class="tst">[23/02/2014 02:35:12]</span>
+					<span class="usr">Monica</span>:
+					<span class="txt"> actualización de tests para el comando de solicitud</span>
+				</li>
+				<li>
+					<span class="tst">[23/02/2014 02:55]</span>
+					<span class="usr">Raúl</span>:
+					<span class="txt">Prueba completada. encontrados bugs. se detallan en la incidencia de redmine #4567</span>
+				</li>
+			</ul></section>
+
+			<iframe id="hidden_iframe" class="hidden"></iframe>
+			<form id="formMsg" action="https://script.google.com/macros/s/AKfycbzc7jL2UlBhZr1oDws_BGMfGTDQKdD5aHAqS7o0-faSuPBx0fs/exec"
+				method="post" name="mensaje" target="hidden_iframe"
+				class="hidden">
+				<input id="roomHidden" type="hidden" name="Sala">
+				<input id="userHidden" type="hidden" name="Usuario">
+
+				<textarea id="message" name="Mensaje" placeholder="Mensaje..."></textarea>
+				<button type="submit" class="iconBtn icon-floppy-disk"></button>
+			</form>
+		</div>
+	</body>
+</html>
